@@ -1,0 +1,52 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MPS Lite</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">MPS Lite</a>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="highlight container">
+      <h2>MPS Minified</h2>
+      <pre>
+        <code class="language-html" data-lang="javascript"></code>
+      </pre>
+    </div>
+
+    <div id="mps-build">
+      <!-- build:js scripts/main.js -->
+      <script src="scripts/mps-ext.js"></script>
+      <script src="scripts/mps-tools.js"></script>
+      <!-- endbuild -->
+    <div>
+
+    <!-- Demo only. -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+      $.ajax({
+        type:'GET',
+        url:$('#mps-build script:first-child').prop('src'),
+        success: function(d) {
+          $('.language-html').html(d);
+        }
+      })
+    </script>
+    <!-- /Demo only. -->
+
+</body>
+</html>
